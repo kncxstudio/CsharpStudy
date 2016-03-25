@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="WeatherApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.TopAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <AppBarButton Name="refreshTopBarButton" Label="刷新" Icon="Refresh" Click="commitButton_Click"></AppBarButton>
+        </CommandBar>
+    </Page.TopAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        
+        <Button Name="commitButton" Grid.Row="1" Width="auto" HorizontalAlignment="Center" Click="commitButton_Click">查询天气</Button>
+        <TextBox Name="cityNameTextbox" Grid.Row="0" PlaceholderText="请输入城市"></TextBox>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollMode="Enabled" MaxZoomFactor="10" Margin="20,0,20,20"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+            <TextBlock Name="resultTB" ></TextBlock>
+        </ScrollViewer>
+    </Grid>
+</Page>
