@@ -45,8 +45,6 @@ namespace WeatherApp
             info += "\n\n数据更新时间：" + updateTime +"\n今日空气质量："+airQuality+"\n";
             for (int i = 0; i < jsonArray.Count; i++)
             {
-                JObject jObj = (JObject)jsonArray[i];
-
                 castDate = originalJson["HeWeather data service 3.0"][0]["daily_forecast"][i]["date"].ToString();
                 minTemp = originalJson["HeWeather data service 3.0"][0]["daily_forecast"][i]["tmp"]["min"].ToString();
                 maxTemp = originalJson["HeWeather data service 3.0"][0]["daily_forecast"][i]["tmp"]["max"].ToString();
